@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    build: .
+    container_name: chatphp-demo
+    volumes:
+      - ./:/app/public/
+    environment:
+      - TZ=Asia/Shanghai
+      - OPENAI_API_KEY=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
+      - MYSQL_HOST=127.0.0.1
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=abc123
+      - MYSQL_DATABASE=app
+    ports:
+      - "80:80"
+      - "3306:3306"
