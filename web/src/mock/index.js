@@ -15,6 +15,12 @@ Mock.mock('/api/conv/list.php', 'get', {
             "time": "2019-01-01 12:00:00",
             "title": "标题2",
             "brief": "回复内容2",
+        },
+        {
+            "id": 3,
+            "time": "2019-01-01 12:00:00",
+            "title": "标题3",
+            "brief": "回复内容2",
         }
     ]
 })
@@ -43,6 +49,54 @@ Mock.mock(/\/api\/conv\/detail.php/, 'get', {
             {
                 "role": "assistant",
                 "content": "我是助手，你可以问我任何问题。"
+            },
+            {
+                "role": "user",
+                "content": "你是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "我是助手，你可以问我任何问题。"
+            },
+            {
+                "role": "user",
+                "content": "你是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "我是助手，你可以问我任何问题。"
+            },
+            {
+                "role": "user",
+                "content": "你是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "我是助手，你可以问我任何问题。"
+            },
+            {
+                "role": "user",
+                "content": "你是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "我是助手，你可以问我任何问题。"
+            },
+            {
+                "role": "user",
+                "content": "你是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "我是助手，你可以问我任何问题。"
+            },
+            {
+                "role": "user",
+                "content": "你是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。"
             }
         ],
     }

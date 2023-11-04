@@ -15,79 +15,71 @@ function fetch_conversation_list() {
   })
 }
 
-const showing_conv_index = ref(0)
-const showing_conv_messages = ref([
-  {
-    "role": "user",
-    "content": "你好",
-  },
-  {
-    "role": "assistant",
-    "content": "你好，有什么可以帮助你的吗？",
-  },
-  {
-    "role": "user",
-    "content": "你是谁？"
-  },
-  {
-    "role": "assistant",
-    "content": "我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。"
-  },
-  {
-    "role": "user",
-    "content": "你是谁？"
-  },
-  {
-    "role": "assistant",
-    "content": "我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。"
-  },
-  {
-    "role": "user",
-    "content": "你是谁？"
-  },
-  {
-    "role": "assistant",
-    "content": "我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。"
-  },
-  {
-    "role": "user",
-    "content": "你是谁？"
-  },
-  {
-    "role": "assistant",
-    "content": "我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。"
-  },
-  {
-    "role": "user",
-    "content": "你是谁？"
-  },
-  {
-    "role": "assistant",
-    "content": "我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。我是助手，你可以问我任何问题。"
-  }
-])
+const showing_conv_index = ref(-1)
+const showing_conv_messages = ref([])
 
 function fetch_messages(conv_id) {
+  axios.get(
+    '/api/conv/detail.php',
+    {
+      params: {
+        id: conv_id,
+      }
+    }
+  ).then((response) => {
+    if (response.data.code == 0) {
+      showing_conv_messages.value = response.data.data.messages
+    }
+  })
+}
+
+function switch_conv(conv_id) {
+  var conv_index = -1
+  for (var i = 0; i < conversations.value.length; i++) {
+    if (conversations.value[i].id == conv_id) {
+      conv_index = i
+      break
+    }
+  }
+  showing_conv_index.value = conv_index
+  fetch_messages(conversations.value[conv_index].id)
+}
+
+function new_conv() {
+  showing_conv_index.value = -1
+  showing_conv_messages.value = []
 }
 
 window.onload = function () {
   fetch_conversation_list()
 }
 
+const asking = ref(false)
+
+function ask(){
+  asking.value = true
+}
+
 </script>
 
 <template>
   <div id="overall_container">
-    <div id="conv_list">
-      <div class="conv_item" v-for="conv in conversations"
-        :style="{ borderLeftColor: showing_conv_index != -1 && conv.id == conversations[showing_conv_index].id ? '#F7A072' : '#fff' }"
-        :key="conv.id">
-        <div class="conv_item_title">
-          {{ conv.title }}
+    <div id="conv_list_panel">
+      <div id="site_title">ChatPHP by RockChinQ</div>
+      <div id="conv_list">
+        <div class="conv_item" v-for="conv in conversations"
+          :style="{ borderLeftColor: showing_conv_index != -1 && conv.id == conversations[showing_conv_index].id ? '#F7A072' : '#fff' }"
+          :key="conv.id" @click="switch_conv(conv.id)">
+          <div class="conv_item_title">
+            {{ conv.title }}
+          </div>
+          <div class="conv_item_brief">
+            {{ conv.brief }}
+          </div>
         </div>
-        <div class="conv_item_brief">
-          {{ conv.brief }}
-        </div>
+      </div>
+      <div id="conv_operation_panel">
+        <button id="create_conv" class="op_btn" @click="new_conv">New</button>
       </div>
     </div>
     <div id="chat_panel">
@@ -97,7 +89,8 @@ window.onload = function () {
         </div>
         <div id="messages_flow" v-if="showing_conv_index != -1">
           <div class="message_item" v-for="message in showing_conv_messages">
-            <img class="role_avatar" :src="message.role=='user'?'https://seed-jianbei-public.oss-cn-hangzhou.aliyuncs.com/mytan/10077/AVATAR/d306b5de-5767-4872-8b59-3566f6e4b061.jpg':'https://mytan.maiseed.com.cn/assets/tan-avatar.png'">
+            <img class="role_avatar"
+              :src="message.role == 'user' ? 'https://seed-jianbei-public.oss-cn-hangzhou.aliyuncs.com/mytan/10077/AVATAR/d306b5de-5767-4872-8b59-3566f6e4b061.jpg' : 'https://mytan.maiseed.com.cn/assets/tan-avatar.png'">
             <div class="message_content">
               {{ message.content }}
             </div>
@@ -106,7 +99,7 @@ window.onload = function () {
       </div>
       <div id="input_panel">
         <textarea id="input_area"></textarea>
-        <el-button id="send">Send</el-button>
+        <el-button id="send" v-loading="asking"  element-loading-svg-view-box="-25, -25, 100, 100"  @click="ask">Send</el-button>
       </div>
     </div>
   </div>
@@ -121,26 +114,82 @@ window.onload = function () {
   flex-direction: row;
   width: 100%;
   height: 100%;
+  background-color: #000;
+}
+
+#conv_list_panel{
+  position: relative;
+  width: 25%;
+  left: 2%;
+  top: 2%;
+  height: 96%;
+  /* background-color: #f0f0f0; */
+  display: flex;
+  flex-direction: column;
   background-color: rgb(37, 35, 74);
+  /* box-shadow: 3px 3px 30px rgb(28, 32, 102); */
+  border-radius: 2rem 0 0 2rem;
+  z-index: 100;
+}
+
+#site_title {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  /* border-bottom: solid 1px #f0f0f0; */
+  border-bottom: solid 1px #3D405B;
 }
 
 #conv_list {
   position: relative;
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: calc(100% - 6rem - 6rem);
   /* background-color: #f0f0f0; */
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow: auto;
+  padding-bottom: 1.5rem;
+}
+
+#conv_operation_panel {
+  position: absolute;
+  width: calc(80% - 40px);
+  left: 1.6rem;
+  bottom: 1.7rem;
+  /* background-color: #fff; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.op_btn {
+  background-color: #F7A072;
+  color: #ffffff;
+  /* border: solid 1px #ffffff; */
+  border: 0;
+  border-radius: 5px;
+  align-items: center;
+  height: 2rem;
+}
+
+.op_btn:active {
+  background-color: rgb(243, 145, 65);
 }
 
 .conv_item {
   position: relative;
-  width: calc(80% - 40px);
-  margin-top: 0.8rem;
-  top: 0.3rem;
-  left: 1rem;
+  width: calc(100% - 3.6rem);
+  top: 0.4rem;
+  margin-top: 0.6rem;
   height: 4rem;
+  left: 1.6rem;
   background-color: rgb(0, 3, 19);
   border-radius: 5px;
   border-left-color: #ffffff;
@@ -152,9 +201,9 @@ window.onload = function () {
 
 .conv_item_title {
   position: relative;
-  top: 22px;
+  top: 1.3rem;
   transform: translateY(-50%);
-  left: 10px;
+  left: 0.8rem;
   font-size: 1.2rem;
   color: #fff;
   width: calc(100% - 60px);
@@ -163,9 +212,9 @@ window.onload = function () {
 
 .conv_item_brief {
   position: relative;
-  top: 20px;
+  top: 1.3rem;
   transform: translateY(-50%);
-  left: 10px;
+  left: 0.8rem;
   font-size: 0.8rem;
   color: #a7a7a7;
   width: calc(100% - 30px);
@@ -174,11 +223,15 @@ window.onload = function () {
 
 #chat_panel {
   position: relative;
-  width: 75%;
-  height: 100%;
+  width: 71%;
+  height: 96%;
+  top: 2%;
+  left: 2%;
   /* background-color: #f0f0f0; */
   display: flex;
   flex-direction: column;
+  background-color: rgb(23, 23, 37);
+  border-radius: 0 2rem 2rem 0;
 }
 
 #messages_panel {
@@ -186,17 +239,19 @@ window.onload = function () {
   width: 100%;
   height: calc(100% - 6rem);
   /* background-color: #fff; */
-  overflow: scroll;
 }
 
 #input_panel {
   position: relative;
-  width: 80%;
+  width: 100%;
   height: 6rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #3D405B;
   /* background-color: #dc6060; */
 }
 
@@ -225,16 +280,38 @@ window.onload = function () {
   color: #fff;
 }
 
-#messages_flow {
+#hint_to_chat {
   position: relative;
   width: 100%;
   height: 100%;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#messages_flow {
+  position: relative;
+  width: calc(100%);
+  height: calc(100% - 1.7rem);
+  left: 0rem;
+  top: 1.2rem;
+  overflow-y: auto;
+  /* background-color: #F7A072; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* z-index: 100000; */
+  /* padding-bottom: 10rem; */
+  /* scrollbar-width: none; */
+  /* scrollbar-color: dark; */
 }
 
 .message_item {
   display: flex;
-  margin-top: 1rem;
-  width: 90%;
+  margin-bottom: 1.4rem;
+  width: 60%;
   /* background-color: aqua; */
 }
 
@@ -250,9 +327,11 @@ window.onload = function () {
 
 .message_content {
   position: relative;
-  width: calc(100% - 3rem);
+  width: calc(100% - 5rem);
   height: auto;
   padding-top: 0.8rem;
+  left: 0.4rem;
   color: #fff;
+  /* background-color: #a7a7a7; */
 }
 </style>
