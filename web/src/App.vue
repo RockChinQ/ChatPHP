@@ -85,7 +85,7 @@ function ask(){
     <div id="chat_panel">
       <div id="messages_panel">
         <div id="hint_to_chat" v-if="showing_conv_index == -1">
-          Please select a conversation to chat.
+          Please select a conversation or send a new message to start a new conversation.
         </div>
         <div id="messages_flow" v-if="showing_conv_index != -1">
           <div class="message_item" v-for="message in showing_conv_messages">
@@ -170,17 +170,20 @@ function ask(){
 }
 
 .op_btn {
-  background-color: #F7A072;
+  background-color: #ea8b59;
   color: #ffffff;
   /* border: solid 1px #ffffff; */
   border: 0;
   border-radius: 5px;
   align-items: center;
   height: 2rem;
+  padding-inline: 1rem;
+  /* font-size: ; */
+  font-weight: 600;
 }
 
 .op_btn:active {
-  background-color: rgb(243, 145, 65);
+  background-color: rgb(218, 121, 42);
 }
 
 .conv_item {
