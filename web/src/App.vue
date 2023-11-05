@@ -150,11 +150,13 @@ function ask(){
   position: relative;
   width: 100%;
   height: calc(100% - 6rem - 6rem);
+  top: 0;
+  left: 0;
   /* background-color: #f0f0f0; */
-  display: flex;
+  overflow-y: auto;
+  display: block;
   flex-direction: column;
-  overflow: auto;
-  padding-bottom: 1.5rem;
+  align-items: start;
 }
 
 #conv_operation_panel {
@@ -189,7 +191,8 @@ function ask(){
 .conv_item {
   position: relative;
   width: calc(100% - 3.6rem);
-  top: 0.4rem;
+  /* top: 0.4rem; */
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.3);
   margin-top: 0.6rem;
   height: 4rem;
   left: 1.6rem;
@@ -200,12 +203,12 @@ function ask(){
   border-left-width: 0.3rem;
   border-left-style: solid;
   user-select: none;
+  display: flex;
 }
 
 .conv_item_title {
-  position: relative;
-  top: 1.3rem;
-  transform: translateY(-50%);
+  position: absolute;
+  top: 0.5rem;
   left: 0.8rem;
   font-size: 1.2rem;
   color: #fff;
@@ -214,9 +217,8 @@ function ask(){
 }
 
 .conv_item_brief {
-  position: relative;
-  top: 1.3rem;
-  transform: translateY(-50%);
+  position: absolute;
+  top: 2.4rem;
   left: 0.8rem;
   font-size: 0.8rem;
   color: #a7a7a7;
@@ -292,6 +294,7 @@ function ask(){
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 
 #messages_flow {

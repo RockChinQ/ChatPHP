@@ -21,7 +21,7 @@ Mock.mock('/api/conv/list.php', 'get', {
             "time": "2019-01-01 12:00:00",
             "title": "标题3",
             "brief": "回复内容2",
-        }
+        },
     ]
 })
 
