@@ -1,8 +1,8 @@
 version: '2'
 services:
   web:
-    build: .
-    container_name: chatphp-demo
+    image: rockchin/chatphp-base:latest
+    container_name: chatphp-base
     volumes:
       - ./:/app/public/
     environment:
@@ -14,4 +14,4 @@ services:
       - MYSQL_DATABASE=app
     ports:
       - "80:80"
-      - "3306:3306"
+      - "13306:3306"
