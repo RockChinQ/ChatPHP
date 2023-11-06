@@ -175,6 +175,12 @@ function del_conv(conv_id){
   })
 }
 
+function del_all_conv() {
+  for (var i = 0; i < conversations.value.length; i++) {
+    del_conv(conversations.value[i].id)
+  }
+}
+
 window.onload = function () {
   fetch_conversation_list()
 }
@@ -267,12 +273,13 @@ function ask() {
       </div>
       <div id="conv_operation_panel">
         <button id="create_conv" class="op_btn" @click="new_conv">New</button>
+        <button id="delete_all" class="op_btn" @click="del_all_conv">Delete All</button>
       </div>
     </div>
     <div id="chat_panel">
       <div id="messages_panel">
         <div id="hint_to_chat" v-if="showing_conv_index == -1">
-          Please select a conversation or send a new message to start a new conversation.
+          左侧选择以继续对话，或发送消息以开始新的对话
         </div>
         <div id="messages_flow" v-if="showing_conv_index != -1">
           <div class="message_item" v-for="message in showing_conv_messages">
@@ -368,6 +375,7 @@ function ask() {
   align-items: center;
   height: 2rem;
   padding-inline: 1rem;
+  margin-right: 1rem;
   /* font-size: ; */
   font-weight: 600;
 }
@@ -381,7 +389,7 @@ function ask() {
   width: calc(100% - 3.6rem);
   /* top: 0.4rem; */
   box-shadow: 1px 1px 3px rgba(23, 23, 23, 0.8);
-  top: 0.8rem;
+  top: 0.6rem;
   margin-top: 1rem;
   height: 5rem;
   left: 1.6rem;
