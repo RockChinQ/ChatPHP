@@ -91,6 +91,12 @@ function chat_completion() {
 
       showing_conv_messages.value = temp
 
+      var convs_temp = conversations.value
+
+      convs_temp[showing_conv_index.value].brief = response.data.data.choices[0].message.content;
+
+      conversations.value = convs_temp
+
       sync_messages()
     } else {
       console.log(response.data.msg)
@@ -414,14 +420,14 @@ function ask() {
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
   width: 1.5rem;
   height: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 50%; */
+  border-radius: 3px;
   background-color: #ea8b59;
   cursor: pointer;
 }
