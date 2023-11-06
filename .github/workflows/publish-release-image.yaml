@@ -1,0 +1,40 @@
+name: Build Latest Image
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - "docs/**"
+  workflow_dispatch:
+jobs:
+  publish-latest-docker-image:
+    runs-on: ubuntu-latest
+    name: Build and publish docker image
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          cd web
+          npm install
+      - name: Build web
+        run: |
+          cd web
+          npm run build
+      - name: Copy dist files
+        run: |
+          cp -rf web/dist/* .
+      - name: Build image
+        run: |
+          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/chatphp-prod:latest .
+      - name: Publish image
+        run: |
+          docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/prod:latest
